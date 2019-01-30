@@ -15,7 +15,6 @@ prompt("What type of Pokemon do you like?");*/
 
 
 Game();
-Inventory();
 
 function Game(){
     
@@ -28,13 +27,35 @@ alert("The Legend of the Really Dark Forest");
     Forest();
     
     function Forest(){
-        var Forest = prompt("So here's the run down.. I guess you partied a bit to hard last night. You are now laying in the middle of a ridiculously dark forest and can't see much around yourself. \n -Look around \n -Sit down and cry a bit \n -Start to sprint in the dark screaming").toLowerCase();
+        var forest1 = prompt("So here's the run down.. I guess you partied a bit to hard last night. You are now laying in the middle of a ridiculously dark forest and can't see much around yourself. \n -Look around \n -Sit down and cry a bit \n -Run and Scream").toLowerCase();
         
-        if(Forest == "look around" || Forest == "look"){
+        if(forest1 == "look around" || forest1 == "look"){
+            
             var forestLook = confirm("About three feet in front of you there is a super conveniently placed flash light, you're welcome. \n -Would you like to take the take the Flashlight?");
-            if(resume){alert ("Flashlight added to you're inventory.")
-            else if{alert ("Something really big and mean likes the dark as cover. This unfaced beast comes up behind you and \nBAM!! \nYou Died..")}
+            if (forestLook){
+                alert ("A Flashlight was added to your inventory.");}
+            
+            else if (!forestLook){
+                alert ("Something really big and mean likes the dark as cover. This unfaced beast comes up behind you and \nBAM!! \nYou Died..");}
             }
+        
+    else if(forest1 == "sit down" || forest1 == "cry" || forest1 == "sit down and cry a bit" || forest1 == "sit" || forest1 == "cry a bit" || forest1 == "sit and cry"){
+        
+        var cryingabit = confirm("Okay.. so if this is how the whole adventure is going to be I don't think this is going to work out.. Do you want to continue playing?");
+        if (cryingabit){
+            alert ("Ok lets get going again.");
+            Forest();
+        }
+        else if (!cryingabit){
+            alert ("Well then I guest this is goodbye... Game Over.")
         }
     }
+        else if(forest1 == "run and scream" || forest1 == "run" || forest1 == "scream");
+    alert("You hit a tree and ")    
+   //Forests end bracket
+    }
+    
+    
+    
+ 
 }
