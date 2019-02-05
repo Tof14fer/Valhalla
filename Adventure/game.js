@@ -12,6 +12,13 @@ confirm("Do you like Pokemon");
 
 prompt("What type of Pokemon do you like?");*/
 
+//Inventory
+var inventory ={
+    coins:500,
+    food:0,
+    weapon:0,
+    map:0,
+}
 
 
 Game();
@@ -37,8 +44,7 @@ alert("The Legend of the Really Dark Forest");
                 
             var directiontogo = prompt("Now that you have a light you can see some of the things that are lurking around you. You notice there are two paths you can take. You can either go north or west. Which way do you want to go? \n -North \n -West").toLowerCase();{
                 
-                if(directiontogo == "north"){
-                
+                if(directiontogo == "north"){  
             var northboundtown = alert("So, you see a small town further along the path.. Would you like to continue to the town or turn back?... Hah like you had a choice.");
                 alert ("Ok, then lets get to that town!!");
                 Town();}
@@ -82,12 +88,35 @@ alert("The Legend of the Really Dark Forest");
     }
     function Town(){
         var township = alert("Welcome to our Town.");
+        Blacksmith();
+        
+        //Blacksmith
+        function Blacksmith(){
+            alert("Welcome to my shop");
+            
+            var blacksmith = prompt("I have all of your traveling needs. What are you looking for? \n-Sword \n-Food \n-Map");
+            if (blacksmith == "sword" || blacksmith == "buy sword" && inventory.coins >= 100){
+                var swordBuy = confirm("Are you sure you want to get this fine blade?");
+                if(swordBuy){
+                    //Add sword plus one
+                    inventory.weapon ++;
+                    alert("You own "+inventory.weapon+ " weapon(s)");
+                    inventory.coins
+                }
+            }
+        } 
+
+        Town();
     }
-    Town();
     
     
     function DeepForest(){
-        var forest2 = prompt("OOF this is spooky..");
+        var spookyforest = prompt("You can't see much in front of you. It is really dark and even the brightest of lights could not be shown a couple of feet infront of you. You see that there is something hanging in a tree, you can stop to investigate or you can jsut continue down the path. \nWhat will it be? \n-Look in the tree \n-Continue on the path").toLowerCase();{
+            switch(spookyforest)
+                case:Look in the tree
+                alert("sad days")
+                break;
+        }
     }
     DeepForest();
     
