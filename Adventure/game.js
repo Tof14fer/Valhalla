@@ -25,6 +25,8 @@ Game();
 
 function Game(){
     
+    //var wizardNames = ["Zork", "AhCoo", "John"];
+    
 alert("The Legend of the Really Dark Forest");
     
     var PC = prompt("What shall I call you traveler?");
@@ -40,34 +42,16 @@ alert("The Legend of the Really Dark Forest");
             
             var forestLook = confirm("About three feet in front of you there is a super conveniently placed flash light, you're welcome. \n -Would you like to take the take the Flashlight?");
             if (forestLook){
-                alert ("A Flashlight was added to your inventory.");
-                
-            var directiontogo = prompt("Now that you have a light you can see some of the things that are lurking around you. You notice there are two paths you can take. You can either go north or west. Which way do you want to go? \n -North \n -West").toLowerCase();{
-                
-                if(directiontogo == "north"){  
-            var northboundtown = alert("So, you see a small town further along the path.. Would you like to continue to the town or turn back?... Hah like you had a choice.");
-                alert ("Ok, then lets get to that town!!");
-                Town();}
-                
-            else if(directiontogo == "west"){
-                
-                var westward = alert ("Well.. I guess we are heading further into the forest. Here we go!!!");
-                    DeepForest();
-                }
+                alert ("Now you have a flashlight my friend.");
+                                Pathfromstart();
             }
+           else if (forestLook){
+               alert("uufug")
+           }
+        }
                 
-                
-                
-                
-                
-                
-                
-            }
+      
             
-            else if (!forestLook){
-                alert ("Something really big and mean likes the dark as cover. This unfaced beast comes up behind you and \nBAM!! \nYou Died..");}
-            }
-        
     else if(forest1 == "sit down" || forest1 == "cry" || forest1 == "sit down and cry a bit" || forest1 == "sit" || forest1 == "cry a bit" || forest1 == "sit and cry"){
         
         var cryingabit = confirm("Okay.. so if this is how the whole adventure is going to be I don't think this is going to work out.. Do you want to continue playing?");
@@ -84,8 +68,25 @@ alert("The Legend of the Really Dark Forest");
         }
             Forest();
         
-   //Forests end bracket
+   //Forests end bracket    
     }
+      function Pathfromstart(){       
+            var directiontogo = prompt("Now that you have a light you can see some of the things that are lurking around you. You notice there are two paths you can take. You can either go north or west. Which way do you want to go? \n -North \n -West").toLowerCase();
+                
+                if(directiontogo == "north"){  
+            var northboundtown = alert("So, you see a small town further along the path.. Would you like to continue to the town or turn back?... Hah like you had a choice.");
+                alert ("Ok, then lets get to that town!!");
+                Town();}
+                
+            else if(directiontogo == "west"){
+                
+                var westward = alert ("Well.. I guess we are heading further into the forest. Here we go!!!");
+                    DeepForest();
+                }
+                
+            else(alert("I don't know what "+directiontogo+" is."))
+                Forest();
+        }
     function Town(){
         var township = alert("Welcome to our Town.");
         Blacksmith();
@@ -111,14 +112,27 @@ alert("The Legend of the Really Dark Forest");
     
     
     function DeepForest(){
-        var spookyforest = prompt("You can't see much in front of you. It is really dark and even the brightest of lights could not be shown a couple of feet infront of you. You see that there is something hanging in a tree, you can stop to investigate or you can jsut continue down the path. \nWhat will it be? \n-Look in the tree \n-Continue on the path").toLowerCase();{
-            switch(spookyforest)
-                case:Look in the tree
-                alert("sad days")
+        var spookyforest = prompt("You can't see much in front of you. It is really dark and even the brightest of lights could not be shown a couple of feet infront of you. You see that there is something hanging in a tree, you can stop to investigate or you can jsut continue down the path. \nWhat will it be? \n-Investigate \n-Continue").toLowerCase();
+            switch(spookyforest){
+                case "investigate":
+                    alert("Oooooo big tree")
                 break;
+            
+            case "continue":
+            alert("dark")
+            break;
+            
+                    
+                default:
+                    alert("I don't know what "+spookyforest+" is.")
+                    DeepForest();
+            }
+        
         }
-    }
     DeepForest();
+    
+    
+    
     
  
 }
