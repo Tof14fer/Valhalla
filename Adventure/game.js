@@ -40,14 +40,9 @@ alert("The Legend of the Really Dark Forest");
         
         if(forest1 == "look around" || forest1 == "look"){
             
-            var forestLook = confirm("About three feet in front of you there is a super conveniently placed flash light, you're welcome. \n -Would you like to take the take the Flashlight?");
-            if (forestLook){
+            var forestLook = alert("About three feet in front of you there is a super conveniently placed flash light, you're welcome.");
                 alert ("Now you have a flashlight my friend.");
-                                Pathfromstart();
-            }
-           else if (forestLook){
-               alert("uufug")
-           }
+                Pathfromstart();
         }
                 
       
@@ -88,7 +83,12 @@ alert("The Legend of the Really Dark Forest");
                 Forest();
         }
     function Town(){
-        var township = alert("Welcome to our Town.");
+        var township = alert("As you approach the small shore town you smell the salt in the air and the fresh fish being filleted in the towns core. The town is full of sound and people rushing for the morning rush. A man brushes past you with a dazed look in his eye.");
+        
+        
+        
+        
+        
         Blacksmith();
         
         //Blacksmith
@@ -115,11 +115,23 @@ alert("The Legend of the Really Dark Forest");
         var spookyforest = prompt("You can't see much in front of you. It is really dark and even the brightest of lights could not be shown a couple of feet infront of you. You see that there is something hanging in a tree, you can stop to investigate or you can jsut continue down the path. \nWhat will it be? \n-Investigate \n-Continue").toLowerCase();
             switch(spookyforest){
                 case "investigate":
-                    alert("Oooooo big tree")
+                    var bodyinvest = prompt("As you approach the tall dark tree, you notice the silhouette of a person in the tree. It appears to be motionless, but there is a small seize coming from the body. You can either stay and see what happens or run. \n -Stay \n -Run").toLowerCase();
+                    switch(bodyinvest){
+                        case "stay":
+                            alert("The body begins to move and falls from the tree, it hits the ground and a arm emerges for the sack. The arm pulls the mysterious mass towards you.");
+                            Bodyinteraction();
+                           break; 
+                        case "run":
+                            DeeperForest();
+                            break;
+                        default:
+                            alert("I don't know what "+bodyinvest+" is.")
+                            DeepForest();
+                    }
                 break;
             
             case "continue":
-            alert("dark")
+            DeeperForest();
             break;
             
                     
@@ -127,10 +139,24 @@ alert("The Legend of the Really Dark Forest");
                     alert("I don't know what "+spookyforest+" is.")
                     DeepForest();
             }
-        
+            DeepForest();
         }
-    DeepForest();
     
+    
+    //new area
+    function DeeperForest(){
+        alert("Hey oh")
+        DeeperForest();
+    }
+    
+    // Body Interaction
+    function bodyinteraction(){
+        var bodymovement = prompt("The mass is within feet of you. You see the arm stop and begin to tug on the knot holding the bag closed. You can help untie the knot or kick the mass. \n -Help \n -Kick").toLowerCase();
+        switch(bodyinteraction){
+            case "help":
+            case "kick":
+        }
+    }
     
     
     
