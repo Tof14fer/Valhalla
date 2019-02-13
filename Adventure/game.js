@@ -83,7 +83,7 @@ alert("The Legend of the Really Dark Forest");
                 Forest();
         }
     function Town(){
-        var township = alert("As you approach the small shore town you smell the salt in the air and the fresh fish being filleted in the towns core. The town is full of sound and people rushing for the morning rush. A man brushes past you with a dazed look in his eye.");
+        var township = alert("As you approach the small shore town you smell the salt in the air and the fresh fish being filleted in the towns core. The town is full of sound and people rushing for the morning rush. A man brushes past you with a dazed look in his eye. There is a shop you can see with the door open and a warm light luring you in.");
         
         
         
@@ -93,18 +93,80 @@ alert("The Legend of the Really Dark Forest");
         
         //Blacksmith
         function Blacksmith(){
-            alert("Welcome to my shop");
-            
-            var blacksmith = prompt("I have all of your traveling needs. What are you looking for? \n-Sword \n-Food \n-Map");
+            var blacksmith = prompt("I have all of your traveling needs. What are you looking for? \n-Sword \n-Food \n-Map").toLowerCase();
             if (blacksmith == "sword" || blacksmith == "buy sword" && inventory.coins >= 100){
-                var swordBuy = confirm("Are you sure you want to get this fine blade?");
+                var swordBuy = confirm("Are you sure you want to get this fine blade? It will cost a total of 100 coins.");
                 if(swordBuy){
                     //Add sword plus one
-                    inventory.weapon ++;
+                    inventory.weapon += 1;
                     alert("You own "+inventory.weapon+ " weapon(s)");
-                    inventory.coins
+                    inventory.coins -= 100;
+                    alert("You now have "+inventory.coins+ " coins");
+                    Blacksmith();
                 }
+                
+                else if (blacksmith == "sword" || blacksmith == "buy sword" && inventory.coins < 100){
+                    alert("You don't have enough money for that.")
+                    Blacksmith();
+                }
+                
+                else{
+                    Blacksmith();
+                }
+            } 
+            
+            else if (blacksmith == "food" || blacksmith == "buy food" && inventory.coins >= 10){
+                var foodBuy = confirm("Are you sure you want to get this fine bread? It will cost a total of 10 coins.");
+                if(foodBuy){
+                    //Add sword plus one
+                    inventory.food += 1;
+                    alert("You own "+inventory.food+ " piece(s) of bread.");
+                    inventory.coins -= 10;
+                    alert("You now have "+inventory.coins+ " coins");
+                    Blacksmith();
+                }
+                
+                else if (blacksmith == "food" || blacksmith == "buy food" && inventory.coins < 100){
+                    alert("You don't have enough money for that.")
+                    Blacksmith();
+                }
+                
+                else{
+                    Blacksmith();
+                }
+                
+                
             }
+            
+            else if (blacksmith == "map" || blacksmith == "buy map" && inventory.coins >= 50){
+                var mapBuy = confirm("Are you sure you want to get this fine map? It will cost a total of 50 coins and has no use in the rest of the adventure.");
+                if(mapBuy){
+                    //Add sword plus one
+                    inventory.map += 1;
+                    alert("You own "+inventory.map+ " map(s).");
+                    inventory.coins -= 50;
+                    alert("You now have "+inventory.coins+ " coins");
+                    Blacksmith();
+                }
+                
+                else if (blacksmith == "map" || blacksmith == "buy map" && inventory.coins < 100){
+                    alert("You don't have enough money for that.")
+                    Blacksmith();
+                }
+                
+                else{
+                    Blacksmith();
+                }
+                
+                
+            }
+            
+            
+            else{
+                    alert("I don't know what "+blacksmith+" is.");
+                    Blacksmith();
+                }
+            
         } 
 
         Town();
@@ -154,7 +216,11 @@ alert("The Legend of the Really Dark Forest");
         var bodymovement = prompt("The mass is within feet of you. You see the arm stop and begin to tug on the knot holding the bag closed. You can help untie the knot or kick the mass. \n -Help \n -Kick").toLowerCase();
         switch(bodyinteraction){
             case "help":
+                
+                break;
             case "kick":
+                
+                break;
         }
     }
     
