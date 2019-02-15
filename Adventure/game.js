@@ -55,7 +55,8 @@ alert("The Legend of the Really Dark Forest");
             Forest();
         }
         else if (!cryingabit){
-            alert ("Well then I guest this is goodbye... Game Over.");
+            alert ("Well then I guest this is goodbye...");
+            EndGame();
         }
     }
         else if(forest1 == "run and scream" || forest1 == "run" || forest1 == "scream"){
@@ -84,16 +85,56 @@ alert("The Legend of the Really Dark Forest");
         }
     function Town(){
         var township = alert("As you approach the small shore town you smell the salt in the air and the fresh fish being filleted in the towns core. The town is full of sound and people rushing for the morning rush. A man brushes past you with a dazed look in his eye. There is a shop you can see with the door open and a warm light luring you in.");
-        
-        
-        
-        
-        
+        TownSquare();
+    }
+    // Town center choice
+    function TownSquare(){
+    var town1core = prompt ("The towns center seems to have a lot to offer. You can go to the Blacksmith's, the Inn, or back to the forest. \n -Blacksmith \n -Inn \n -Woods").toLowerCase();
+    switch(town1core){
+        case "blacksmith":
         Blacksmith();
+        break;
+        
+        case "inn":
+        Inn();
+        break;
+        
+        case "woods":
+        DeepForest();
+        break;
+        
+        default:
+        alert ("I don't know what "+town1core+" is.")
+                    TownSquare();
+    }
+    }
+        
+        
+        function Inn(){
+            var innskeeper = prompt("Welcome to my humble home, we can get you in a room and food in your belly of 50 coins. Would you like to stay? \n-Stay \n-Leave").toLowerCase();
+            if (innskeeper == "stay" && inventory.coins >= 50){
+                inventory.food += 1;
+                    alert("You own "+inventory.food+ " piece(s) of bread.");
+                    inventory.coins -= 50;
+                    alert("You now have "+inventory.coins+ " coins");
+                alert("You feel well rested and eager to continue the adventure.")
+                    Inn();
+            }
+            else if (innskeeper == "leave"){
+                TownSquare();
+            }
+            else
+                alert("I don't know what "+innskeeper+" is.");
+            Inn();
+        }
+         
+        
+        
+        
         
         //Blacksmith
         function Blacksmith(){
-            var blacksmith = prompt("I have all of your traveling needs. What are you looking for? \n-Sword \n-Food \n-Map").toLowerCase();
+            var blacksmith = prompt("I have all of your traveling needs. What are you looking for? \n-Sword \n-Food \n-Map \n-Leave").toLowerCase();
             if (blacksmith == "sword" || blacksmith == "buy sword" && inventory.coins >= 100){
                 var swordBuy = confirm("Are you sure you want to get this fine blade? It will cost a total of 100 coins.");
                 if(swordBuy){
@@ -118,7 +159,7 @@ alert("The Legend of the Really Dark Forest");
             else if (blacksmith == "food" || blacksmith == "buy food" && inventory.coins >= 10){
                 var foodBuy = confirm("Are you sure you want to get this fine bread? It will cost a total of 10 coins.");
                 if(foodBuy){
-                    //Add sword plus one
+                    //Add food plus one
                     inventory.food += 1;
                     alert("You own "+inventory.food+ " piece(s) of bread.");
                     inventory.coins -= 10;
@@ -141,7 +182,7 @@ alert("The Legend of the Really Dark Forest");
             else if (blacksmith == "map" || blacksmith == "buy map" && inventory.coins >= 50){
                 var mapBuy = confirm("Are you sure you want to get this fine map? It will cost a total of 50 coins and has no use in the rest of the adventure.");
                 if(mapBuy){
-                    //Add sword plus one
+                    //Add map plus one
                     inventory.map += 1;
                     alert("You own "+inventory.map+ " map(s).");
                     inventory.coins -= 50;
@@ -161,6 +202,11 @@ alert("The Legend of the Really Dark Forest");
                 
             }
             
+            else if (blacksmith == "leave"){
+                alert("Have a nice day!");
+                TownSquare();
+            }
+            
             
             else{
                     alert("I don't know what "+blacksmith+" is.");
@@ -170,18 +216,20 @@ alert("The Legend of the Really Dark Forest");
         } 
 
         Town();
-    }
+    
     
     
     function DeepForest(){
-        var spookyforest = prompt("You can't see much in front of you. It is really dark and even the brightest of lights could not be shown a couple of feet infront of you. You see that there is something hanging in a tree, you can stop to investigate or you can jsut continue down the path. \nWhat will it be? \n-Investigate \n-Continue").toLowerCase();
+        var spookyforest = prompt("You can't see much in front of you. It is really dark and even the brightest of lights could not be shown a couple of feet infront of you. You see that there is something hanging in a tree, you can stop to investigate or you can jsut continue down the path. \nWhat will it be? \n -Investigate \n -Continue").toLowerCase();
             switch(spookyforest){
                 case "investigate":
                     var bodyinvest = prompt("As you approach the tall dark tree, you notice the silhouette of a person in the tree. It appears to be motionless, but there is a small seize coming from the body. You can either stay and see what happens or run. \n -Stay \n -Run").toLowerCase();
                     switch(bodyinvest){
                         case "stay":
                             alert("The body begins to move and falls from the tree, it hits the ground and a arm emerges for the sack. The arm pulls the mysterious mass towards you.");
+                            
                             Bodyinteraction();
+                            
                            break; 
                         case "run":
                             DeeperForest();
@@ -212,16 +260,33 @@ alert("The Legend of the Really Dark Forest");
     }
     
     // Body Interaction
-    function bodyinteraction(){
-        var bodymovement = prompt("The mass is within feet of you. You see the arm stop and begin to tug on the knot holding the bag closed. You can help untie the knot or kick the mass. \n -Help \n -Kick").toLowerCase();
-        switch(bodyinteraction){
+    function Bodyinteraction(){
+        var bodymovement = prompt("The mass is within feet of you. You see the arm stop and begin to tug on the knot holding the bag closed. You can help untie the knot or kick the bag. \n -Help \n -Kick").toLowerCase();
+        switch(bodymovement){
             case "help":
                 
                 break;
             case "kick":
-                
+                alert("The Thing in the bag really didn't like that. You get attacked..")
+                Death();
                 break;
+                
+            default:
+                alert("I don't know what "+bodymovement+" is.")
+                Bodyinteraction();
         }
+    }
+    
+    
+// Death Function
+    function Death(){
+    alert("You Died... Game Over");
+    Death();
+    }
+// Game over
+    function EndGame(){
+        alert("Game over");
+        EndGame();
     }
     
     
