@@ -31,7 +31,7 @@ alert("The Legend of the Really Dark Forest");
     
     var PC = prompt("What shall I call you traveler?");
     
-    alert("Welcome to the land of the semi-linving, "+PC);
+    alert("Welcome to the land of the semi-living, "+PC);
     
     Forest();
     
@@ -255,16 +255,41 @@ alert("The Legend of the Really Dark Forest");
     
     //new area
     function DeeperForest(){
-        alert("Hey oh")
+        var goblinGathering = prompt("As you walk down this dark path you notice a fire. Around the fire there are some goblins. You can sneak away, attack, or pull up a chair and have a drink with them. What will it be? \n-Sneak \n-Attack \n-Sit down").toLocaleLowerCase();
+        switch(goblinGathering){
+            case "sneak":
+                alert("You literally know nothing about sneaking...")
+                GoblinFight();
+                break;
+            case "attack":
+                GoblinFight();
+                break;
+            case "sit down":
+            case "sit":
+                alert("These Goblins seem really kind. They pass you a drink and you have a wonderful evening hanging out with your new friends.")
+                Forest();
+                break;
+            default:
+                 alert("I don't know what "+goblinGathering+" is.")
+                DeeperForest();
+        }
+        
+        
         DeeperForest();
     }
+                    
+// Gobliln Fight
+   function GoblinFight(){
+           var attackgaboboy = prompt("There are a total of three goblins here. You can take on all three, or you can try just two, or I guess you can try your luck with one. ")
+           jbhakhadfg}G{HH{H}H}
+   } 
     
     // Body Interaction
     function Bodyinteraction(){
         var bodymovement = prompt("The mass is within feet of you. You see the arm stop and begin to tug on the knot holding the bag closed. You can help untie the knot or kick the bag. \n -Help \n -Kick").toLowerCase();
         switch(bodymovement){
             case "help":
-                
+                AhelpingHand();
                 break;
             case "kick":
                 alert("The Thing in the bag really didn't like that. You get attacked..")
@@ -274,6 +299,26 @@ alert("The Legend of the Really Dark Forest");
             default:
                 alert("I don't know what "+bodymovement+" is.")
                 Bodyinteraction();
+        }
+    }
+    
+// Handyman
+    function AhelpingHand(){
+        var openbag = prompt("You reach down and grab the knot. The bag opened easily and revealed a arm.. Yep just a arm.. the arm crawls toward you. You can embrase this little helping hand as your own or you can leave it here. \n-Take \n-Leave").toLowerCase();
+        switch(openbag){
+            case "take":
+                alert("Your new little friend seems to really like you. Now that you have a real friend, lets head out and finish this adventure.")
+                DeeperForest();
+                break;
+                
+            case "leave":
+                alert("You made your little friend very sad.. Soo... he decided you aren't fit to continue.")
+                EndGame();
+                break;
+                
+            default:
+                alert("I don't know what "+openbag+" is.")
+                AhelpingHand();
         }
     }
     
@@ -288,7 +333,11 @@ alert("The Legend of the Really Dark Forest");
         alert("Game over");
         EndGame();
     }
-    
+// Good Game
+    function GGBOYS(){
+        alert("Congrats, you finish the adventure. Have a wonderful day.")
+        GGBOYS();
+    }
     
     
  
