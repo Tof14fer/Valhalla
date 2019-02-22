@@ -31,6 +31,10 @@ alert("The Legend of the Really Dark Forest");
     
     var PC = prompt("What shall I call you traveler?");
     
+    while(!confirm("Are you sure you want "+PC+" to be your name?")){
+        PC = prompt("What name do you want?");
+    }
+    
     alert("Welcome to the land of the semi-living, "+PC);
     
     Forest();
@@ -135,7 +139,7 @@ alert("The Legend of the Really Dark Forest");
         //Blacksmith
         function Blacksmith(){
             var blacksmith = prompt("I have all of your traveling needs. What are you looking for? \n-Sword \n-Food \n-Map \n-Leave").toLowerCase();
-            if (blacksmith == "sword" || blacksmith == "buy sword" && inventory.coins >= 100){
+            if (blacksmith == "sword" || blacksmith == "buy sword" && inventory.coins == 100){
                 var swordBuy = confirm("Are you sure you want to get this fine blade? It will cost a total of 100 coins.");
                 if(swordBuy){
                     //Add sword plus one
@@ -146,7 +150,7 @@ alert("The Legend of the Really Dark Forest");
                     Blacksmith();
                 }
                 
-                else if (blacksmith == "sword" || blacksmith == "buy sword" && inventory.coins < 100){
+                else if (blacksmith == "sword" || blacksmith == "buy sword" && inventory.coins == 100){
                     alert("You don't have enough money for that.")
                     Blacksmith();
                 }
@@ -156,7 +160,7 @@ alert("The Legend of the Really Dark Forest");
                 }
             } 
             
-            else if (blacksmith == "food" || blacksmith == "buy food" && inventory.coins >= 10){
+            else if (blacksmith == "food" || blacksmith == "buy food" && inventory.coins == 10){
                 var foodBuy = confirm("Are you sure you want to get this fine bread? It will cost a total of 10 coins.");
                 if(foodBuy){
                     //Add food plus one
@@ -167,7 +171,7 @@ alert("The Legend of the Really Dark Forest");
                     Blacksmith();
                 }
                 
-                else if (blacksmith == "food" || blacksmith == "buy food" && inventory.coins < 100){
+                else if (blacksmith == "food" || blacksmith == "buy food" && inventory.coins == 100){
                     alert("You don't have enough money for that.")
                     Blacksmith();
                 }
@@ -179,7 +183,7 @@ alert("The Legend of the Really Dark Forest");
                 
             }
             
-            else if (blacksmith == "map" || blacksmith == "buy map" && inventory.coins >= 50){
+            else if (blacksmith == "map" || blacksmith == "buy map" && inventory.coins == 50){
                 var mapBuy = confirm("Are you sure you want to get this fine map? It will cost a total of 50 coins and has no use in the rest of the adventure.");
                 if(mapBuy){
                     //Add map plus one
@@ -190,7 +194,7 @@ alert("The Legend of the Really Dark Forest");
                     Blacksmith();
                 }
                 
-                else if (blacksmith == "map" || blacksmith == "buy map" && inventory.coins < 100){
+                else if (blacksmith == "map" || blacksmith == "buy map" && inventory.coins == 100){
                     alert("You don't have enough money for that.")
                     Blacksmith();
                 }
@@ -255,7 +259,7 @@ alert("The Legend of the Really Dark Forest");
     
     //new area
     function DeeperForest(){
-        var goblinGathering = prompt("As you walk down this dark path you notice a fire. Around the fire there are some goblins. You can sneak away, attack, or pull up a chair and have a drink with them. What will it be? \n-Sneak \n-Attack \n-Sit down").toLocaleLowerCase();
+        var goblinGathering = prompt("As you walk down this dark path you notice a fire. Around the fire there are some goblins. You can sneak away, attack, or pull up a chair and have a drink with them. What will it be? \n-Sneak \n-Attack \n-Sit down").toLowerCase();
         switch(goblinGathering){
             case "sneak":
                 alert("You literally know nothing about sneaking...")
@@ -280,8 +284,27 @@ alert("The Legend of the Really Dark Forest");
                     
 // Gobliln Fight
    function GoblinFight(){
-           var attackgaboboy = prompt("There are a total of three goblins here. You can take on all three, or you can try just two, or I guess you can try your luck with one. ")
-           jbhakhadfg}G{HH{H}H}
+           var attackgaboboy = prompt("There are a total of three goblins here. You can take on all three, or you can try just two, or I guess you can try your luck with one. What will you choose? \n-One \n-Two \n-Three").toLowerCase();
+       switch(attackgaboboy){
+           case "one":
+            case"1":
+               alert("You do manage to take this guy out.. two more to go.")
+           case "two":
+           case "2":
+               alert("Two, now thats an honest number. With a nail bitingly close fight, you do manage to prevail. Lets keep this show on the road.")
+               DeeperestestForestestes();
+               break;
+               
+           case "three":
+           case "3":
+               alert("You are a bold being taking on three goblins at once, congrats...")
+               Death();
+               break;
+               
+           default:
+               alert("I don't now what "+attackgaboboy+" is.")
+               GoblinFight();
+       }
    } 
     
     // Body Interaction
@@ -321,7 +344,32 @@ alert("The Legend of the Really Dark Forest");
                 AhelpingHand();
         }
     }
+  // PC can quit or go to the forest castle of death  
+    function DeeperestestForestestes(){
+        var partingchoices = prompt("It's now way darker and it is also really cold. You can either continue your adventure or return back to you humble home back in town. What will it be? \n-Continue \n-Leave").toLowerCase();
+        switch (partingchoices){
+            case "continue":
+                
+                break;
+                
+            case "leave":
+                alert("I really enjoy your company, I do hope one day we will finish our adventure.")
+                GGBOYS();
+                break;
+                
+            default:
+                alert("I don't know what "+partingchoices+" is.")
+                DeeperestestForestestes();
+        }
+            DeeperestestForestestes();
+    }
     
+    // Forest castle of death.  
+function ForestCastleOfDeath(){
+    alert("Let me start by saying congrats on making it this far, many leave before this point, but "+PC+" you truly are different. Ok back to the quest.")
+    var = prompt ("There seems to be a clearing in the middle of this ridiculous forest. In thsi clearing you see a massive castle with a sign that reads, 'THIS IS THE CASTLE OF DEATH' so.. take that as you please.")
+    
+}
     
 // Death Function
     function Death(){
