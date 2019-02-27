@@ -25,7 +25,9 @@ Game();
 
 function Game(){
     
-    //var wizardNames = ["Zork", "AhCoo", "John"];
+    var demonnames = ["Shizroldir", "Ged'cainnon", "Ashar"];
+    
+    var newdemon = demonnames[Math.floor(Math.random()* 3)]
     
 alert("The Legend of the Really Dark Forest");
     
@@ -40,7 +42,7 @@ alert("The Legend of the Really Dark Forest");
     Forest();
     
     function Forest(){
-        var forest1 = prompt("So here's the run down.. I guess you partied a bit to hard last night. You are now laying in the middle of a ridiculously dark forest and can't see much around yourself. \n -Look around \n -Sit down and cry a bit \n -Run and Scream").toLowerCase();
+        var forest1 = prompt("So here's the run down.. I guess you partied a bit to hard, drinking is never a good activity to do without real supervision. You are now laying in the middle of a ridiculously dark forest and can't see much around yourself. \n -Look around \n -Sit down and cry a bit \n -Run and Scream").toLowerCase();
         
         if(forest1 == "look around" || forest1 == "look"){
             
@@ -349,7 +351,7 @@ alert("The Legend of the Really Dark Forest");
         var partingchoices = prompt("It's now way darker and it is also really cold. You can either continue your adventure or return back to you humble home back in town. What will it be? \n-Continue \n-Leave").toLowerCase();
         switch (partingchoices){
             case "continue":
-                
+                ForestCastleOfDeath();
                 break;
                 
             case "leave":
@@ -367,9 +369,46 @@ alert("The Legend of the Really Dark Forest");
     // Forest castle of death.  
 function ForestCastleOfDeath(){
     alert("Let me start by saying congrats on making it this far, many leave before this point, but "+PC+" you truly are different. Ok back to the quest.")
-    var = prompt ("There seems to be a clearing in the middle of this ridiculous forest. In thsi clearing you see a massive castle with a sign that reads, 'THIS IS THE CASTLE OF DEATH' so.. take that as you please.")
-    
+    var endgamecastle = prompt ("There seems to be a clearing in the middle of this ridiculous forest. In the clearing you see a massive castle with a sign that reads, 'THIS IS THE CASTLE OF DEATH' so.. take that as you please. You can turn around and quit now, or you can do the really smart thing.. and head stright into that big old castle. What do you wnat to do? \n-Quit \n-Continue").toLowerCase();  
+switch (endgamecastle){
+    case "quit":
+        alert("I really enjoy your company, I do hope one day we will finish our adventure.")
+                GGBOYS();
+                break;
+    case "continue":
+        alert("You walk to the base of the grand stone monument of a castle. As you approach the gate at the entrance of the castle, the gate begins to open. You walk into the castle. Once you are inside you see a fire on the far end of the room and a grand tabel with a crimson velvet table runner. Silver chalices and table weres line the table. The castle looks like a well lived in establishment, yet you do not notice any signs of anyone actually being there.")
+        InToTheCastle();
+        break;
+    default:
+        alert("I don't know what "+endgamecastle+" is.")
+        ForestCastleOfDeath();
 }
+       
+}
+    function InToTheCastle(){
+        var innerbeast = prompt("The castle is warm, but dark. You can take a look around, warm up by the fire, or you can take a drink from the chalices on the table. What will it be? \n-Warm up \n-Look around \n-Drink").toLowerCase();
+        switch (innerbeast){
+            case "warm up":
+                alert("As you near the fire, something catches your eye to your side. You ultimately decide to you go and look around and skip the fire all together.")
+                EyeOfTheDemon();
+                break;
+            case "look around":
+                alert("As you begin to look around, something catches your eye to you side. So you decide to go and check it out.")
+                EyeOfTheDemon();
+                break;
+            case "drink":
+                alert("What went through your mind.. *It seems like a good idea to drink out of this random chalice in a castle in the middle of a forest* SMH, let's take a trip.")
+                Forest();
+                break;
+            default:
+                alert("I don't know what "+innerbeast+" is.")
+                InToTheCastle();
+        }
+    }
+    
+    function EyeOfTheDemon(){
+        var demontime = prompt("Ya.. so, it turns out that eye catching detail to your side.. ya that is a demon. It is actually the Demon formally known as "+newdemon+" ").toLowerCase();
+    }
     
 // Death Function
     function Death(){
