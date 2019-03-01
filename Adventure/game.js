@@ -20,11 +20,12 @@ var inventory ={
     map:0,
 }
 
+var you = 9.9;
 
 Game();
 
 function Game(){
-    
+    // Names for the Demons
     var demonnames = ["Shizroldir", "Ged'cainnon", "Ashar"];
     
     var newdemon = demonnames[Math.floor(Math.random()* 3)]
@@ -38,7 +39,7 @@ alert("The Legend of the Really Dark Forest");
     }
     
     alert("Welcome to the land of the semi-living, "+PC);
-    
+    // Start Area
     Forest();
     
     function Forest(){
@@ -52,7 +53,7 @@ alert("The Legend of the Really Dark Forest");
         }
                 
       
-            
+          // Sit Command  
     else if(forest1 == "sit down" || forest1 == "cry" || forest1 == "sit down and cry a bit" || forest1 == "sit" || forest1 == "cry a bit" || forest1 == "sit and cry"){
         
         var cryingabit = confirm("Okay.. so if this is how the whole adventure is going to be I don't think this is going to work out.. Do you want to continue playing?");
@@ -72,6 +73,7 @@ alert("The Legend of the Really Dark Forest");
         
    //Forests end bracket    
     }
+    // Direction North or West
       function Pathfromstart(){       
             var directiontogo = prompt("Now that you have a light you can see some of the things that are lurking around you. You notice there are two paths you can take. You can either go north or west. Which way do you want to go? \n -North \n -West").toLowerCase();
                 
@@ -89,6 +91,7 @@ alert("The Legend of the Really Dark Forest");
             else(alert("I don't know what "+directiontogo+" is."))
                 Forest();
         }
+    // Town function
     function Town(){
         var township = alert("As you approach the small shore town you smell the salt in the air and the fresh fish being filleted in the towns core. The town is full of sound and people rushing for the morning rush. A man brushes past you with a dazed look in his eye. There is a shop you can see with the door open and a warm light luring you in.");
         TownSquare();
@@ -115,11 +118,11 @@ alert("The Legend of the Really Dark Forest");
     }
     }
         
-        
+        // Inn Function
         function Inn(){
             var innskeeper = prompt("Welcome to my humble home, we can get you in a room and food in your belly of 50 coins. Would you like to stay? \n-Stay \n-Leave").toLowerCase();
             if (innskeeper == "stay" && inventory.coins >= 50){
-                inventory.food += 1;
+                inventory.food += 1 ;
                     alert("You own "+inventory.food+ " piece(s) of bread.");
                     inventory.coins -= 50;
                     alert("You now have "+inventory.coins+ " coins");
@@ -209,7 +212,7 @@ alert("The Legend of the Really Dark Forest");
             }
             
             else if (blacksmith == "leave"){
-                alert("Have a nice day!");
+                 alert("Have a nice day!");
                 TownSquare();
             }
             
@@ -224,7 +227,7 @@ alert("The Legend of the Really Dark Forest");
         Town();
     
     
-    
+    // Deep Forest Function
     function DeepForest(){
         var spookyforest = prompt("You can't see much in front of you. It is really dark and even the brightest of lights could not be shown a couple of feet infront of you. You see that there is something hanging in a tree, you can stop to investigate or you can jsut continue down the path. \nWhat will it be? \n -Investigate \n -Continue").toLowerCase();
             switch(spookyforest){
@@ -385,6 +388,7 @@ switch (endgamecastle){
 }
        
 }
+    // Innner Castle Function
     function InToTheCastle(){
         var innerbeast = prompt("The castle is warm, but dark. You can take a look around, warm up by the fire, or you can take a drink from the chalices on the table. What will it be? \n-Warm up \n-Look around \n-Drink").toLowerCase();
         switch (innerbeast){
@@ -393,6 +397,7 @@ switch (endgamecastle){
                 EyeOfTheDemon();
                 break;
             case "look around":
+            case "look":
                 alert("As you begin to look around, something catches your eye to you side. So you decide to go and check it out.")
                 EyeOfTheDemon();
                 break;
@@ -405,9 +410,65 @@ switch (endgamecastle){
                 InToTheCastle();
         }
     }
-    
+    // First Demon Interaction
     function EyeOfTheDemon(){
-        var demontime = prompt("Ya.. so, it turns out that eye catching detail to your side.. ya that is a demon. It is actually the Demon formally known as "+newdemon+" ").toLowerCase();
+        var demontime = prompt("Ya.. so, it turns out that eye catching detail to your side.. ya that is a demon. It is actually the Demon formally known as "+newdemon+". The likelihood of your survival is very small, it is actually just a "+you+"% chance. You can either run or stand your ground and fight back. What will you choose? \n-Run \n-Fight").toLowerCase();
+        switch (demontime){
+            case "run":
+                alert("Runnning from a Demon usually isn't the best call..")
+                Death();
+                break;
+            case "fight":
+                DemonsFinalFight();
+                break;
+            default:
+                alert("I don't know what "+demontime+" is.")
+                EyeOfTheDemon();
+        }
+    }
+    //Fight W/ The Demon
+function DemonsFinalFight(){
+    var fightclub = prompt("The demon begins to charge towards you... What will you do to survive, dive right or left? \n-Right \n-Left").toLowerCase();
+    switch (fightclub){
+        case "right":
+            alert("Wrong call..")
+            Death();
+            break;
+        case "left":
+            alert("You make the correct call..")
+                var nextpart = prompt("The demon does not seem to like the fact you survived.. He swings with his razor sharp claws. Dodge left or right? \n-Right \n-Left").toLowerCase();
+            switch (nextpart){
+                    case "right":
+                        alert("You make the correct call.. kind of..")
+                    LASTSTAND();
+                    break;
+                    case "left":
+                        alert("Nope..")
+                        Death();
+                    break;
+                    default:
+                        alert("I don't know what "+nextpart+" is.")
+                        DemonsFinalFight();
+            }
+        default:
+            alert("I don't know what "+fightclub+" is.")
+            DemonsFinalFight();
+            
+    }
+}
+    function LASTSTAND(){
+    var lastchoice = prompt("The Demon on his last swing hit you and threw you into the corner over by the fireplace. The is a Black Steel blade on the mantle. You grab the sword and hold your ground. You can take offense or defense. \n-Offense \n-Defense").toLowerCase();
+    switch (lastchoice){
+        case "offense":
+            alert("Taking a stand pulling the blade back and swingign with all of the might you can muster.. the blade connects. You feel the demons weight hit your blade. His blood falls like molasses down the blood letter of the blade. You now can bare claim to the castle and you now are the ruler of the forest.")
+            GGBOYS();
+        case "defense":
+            alert("Giving the demon even a extra second cut your survival into pieces. You will not survive..")
+            Death();
+        default:
+            alert("I don't know what "+lastchoice+" is.")
+            LASTSTAND();
+    }
     }
     
 // Death Function
