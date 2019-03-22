@@ -48,17 +48,28 @@
                 margin: 250px 10px 0px 800px;
                 border: outset azure;
                 box-shadow: 5px 5px 20px black;
+                animation-name: rad;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+            }
+            
+            @keyframes rad{
+                0%   {background-color:red; left:0px; top:0px;}
+                25%  {background-color:yellow; left:200px; top:0px;}
+                50%  {background-color:blue; left:200px; top:200px;}
+                75%  {background-color:green; left:0px; top:200px;}
+                100% {background-color:red; left:0px; top:0px;}
             }
             
             div#bigsquare{
                 position: absolute;
-                background-color: #87C7FF;
-                width: 250px;
-                height: 250px;
+                background-color: transparent;
+                width: 0px;
+                height: 0px;
                 margin: 350px 10px 0px 420px;
-                border: outset azure;
-                border-radius: 10%;
-                box-shadow: 5px 5px 20px black;
+                border-bottom: solid 100px transparent;
+                border-top: solid 100px transparent;
+                border-right: solid 100px #87C7FF;
             }
             
             div#square1{
@@ -195,6 +206,24 @@
                 width: 20px;
                 height: 20px;
                 margin: 910px 10px 0px 480px;
+                z-index: 2
+            }
+            
+            img#Harbinger{
+                display: block;
+                height: 250px;
+                width: 500px;
+                border-radius: 15%;
+                border: solid 5px;
+                box-shadow: 5px 5px 30px;
+                position: absolute;
+                z-index: 1;
+                margin: 710px 10px 0px 100px;
+                transition: 2s;
+            }
+            img#Harbinger:hover{
+                width: 1000px;
+                height: 500px;
             }
             
         </style>
@@ -220,7 +249,9 @@
         <div id="square13"></div>        
         <div id="square14"></div>        
         <div id="square15"></div> 
-        <div id="square16"></div>        
+        <div id="square16"></div>
+        
+        <img src="year%20of%20the%20harbinger.jpg" id="Harbinger">
         
         
 
