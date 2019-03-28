@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="800" height="600"
+        style="border:2px solid;border-width: 6px;black;background-color:azure">
+</canvas>
+    
+<canvas id="myCanvas2" width="800" height="600"
+        style="border:2px solid;border-width: 6px;black;background-color:#7E7EA0">
+</canvas>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+    
+    ctx.fillStyle = "#7E7EA0";
+    ctx.fillRect(0,0,400,300);
+    
+    ctx.fillStyle = "#7E7EA0";
+    ctx.fillRect(400,300,400,300);
+    
+    ctx.moveTo(0,0);
+    ctx.lineTo(800,600);
+    ctx.stroke();
+    
+    ctx.moveTo(400,0);
+    ctx.lineTo(400,600);
+    ctx.stroke();
+    
+    ctx.moveTo(800,0);
+    ctx.lineTo(0,600);
+    ctx.stroke();
+    
+    ctx.moveTo(0,300);
+    ctx.lineTo(800,300);
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(400,300,100,0,2*Math.PI);
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(400,300,200,0,2*Math.PI);
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(400,300,300,0,2*Math.PI);
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(400,300,400,0,2*Math.PI);
+    ctx.stroke();
+    
+    var canvas = document.getElementById("myCanvas2");
+var ctx = canvas.getContext("2d");
+var grd = ctx.createLinearGradient(0,0,200,0);
+    grd.addColorStop(0,"black");
+    grd.addColorStop(1,"white");
+    ctx.fillStyle = grd;
+    ctx.fillRect(0,0,400,300);
+    
+    var grd = ctx.createRadialGradient(0,0,0,0,60,100);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+    ctx.fillStyle = grd;
+    ctx.fillRect(400,300,400,300);
+    
+</script>
+</body>
+</html>
