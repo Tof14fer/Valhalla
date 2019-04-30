@@ -1,8 +1,6 @@
 /* Google Fonts 
 font-family: 'Dosis';
 */
-
-
 /* Reset */
 html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6 
 {
@@ -22,19 +20,30 @@ div#container
 	background-color:azure;
 }
 
-header{
-	width:94.2%;
+header
+{
+	width:89%;
 	padding:50px;
-	background-color: #ffc8c8;
+	background-color: #ff9898;
 }
 
-header h1{
+header img#applogo
+{
+   display: block;
+    margin: auto;
+    width: 100px;
+}
+
+header h1
+{
+    text-align: center;
 	color:#333;
 	font-family: 'Dosis';
-	font-size: 2.5em;
+	font-size: 50px;
 }
 
-div#content{
+div#content
+{
 	width:100%;
 	background-color:#c4c4c4;
 }
@@ -62,7 +71,8 @@ nav ul li a:hover{
 	color:darkslategray;
 }
 */
-.icon-bar {
+.icon-bar
+{
   position:absolute;
   bottom:0;
   width: 100%;
@@ -70,13 +80,14 @@ nav ul li a:hover{
   overflow: auto;
 }
 
-.icon-bar a {
+.icon-bar a
+{
   float: left;
   width: 20%;
   text-align: center;
   padding: 12px 0;
   transition: all 0.3s ease;
-  color: ghostwhite;
+  color: white;
   font-size: 36px;
 }
 
@@ -84,8 +95,9 @@ nav ul li a:hover{
   background-color: #333;
 }
 
-.active {
-  background-color: #909090;
+.active
+{
+  background-color: #ff9898;
 }
 /*
 footer{
