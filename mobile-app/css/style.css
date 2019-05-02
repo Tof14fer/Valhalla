@@ -13,6 +13,14 @@ body
 	background-color: white;
 }
 
+body canvas
+{
+    display: block;
+    margin: auto;
+    width: 300px;
+    margin-top: 40px;
+}
+
 div#container
 {
 	width:100%;	
@@ -31,7 +39,7 @@ header img#applogo
 {
    display: block;
     margin: auto;
-    width: 100px;
+    width: 120px;
 }
 
 header h1
@@ -39,13 +47,16 @@ header h1
     text-align: center;
 	color:#333;
 	font-family: 'Dosis';
-	font-size: 50px;
+	font-size: 60px;
 }
 
 div#content
 {
 	width:100%;
 	background-color:#c4c4c4;
+    text-align: center;
+    font-family: Dosis;
+    font-size: 20px;
 }
 
 /*
