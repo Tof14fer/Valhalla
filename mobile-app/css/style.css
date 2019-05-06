@@ -26,6 +26,7 @@ div#container
 	width:100%;	
 	border:3px black;
 	background-color:azure;
+    margin-top: 0px;
 }
 
 header
@@ -33,6 +34,17 @@ header
 	width:89%;
 	padding:50px;
 	background-color: #ff9898;
+}
+
+div#text
+{
+  text-align: center;
+    font-family: Dosis;
+    display: block;
+    margin-top: 30px;
+    font-size: 30px;
+        
+    
 }
 
 header img#applogo
@@ -89,6 +101,14 @@ nav ul li a:hover{
   width: 100%;
   background-color: #c4c4c4;
   overflow: auto;
+}
+
+div#image
+{
+    align-content: center;
+    margin: 0px;
+    width: 12%;
+    
 }
 
 .icon-bar a
