@@ -31,9 +31,11 @@ div#container
 
 header
 {
-	width:89%;
-	padding:50px;
+	width:100%;
+	padding:0px;
 	background-color: #ff9898;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 div#text
@@ -96,18 +98,19 @@ nav ul li a:hover{
 */
 .icon-bar
 {
-  position:absolute;
+  position: absolute;
   bottom:0;
   width: 100%;
   background-color: #c4c4c4;
   overflow: auto;
 }
 
-div#image
+div img#watch
 {
-    align-content: center;
-    margin: 0px;
-    width: 12%;
+    display: block;
+    margin: auto;
+    width: 310px;
+    margin-top: 4px;
     
 }
 
@@ -130,6 +133,16 @@ div#image
 {
   background-color: #ff9898;
 }
+
+div.btn-group
+{
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+    width: 500px;
+
+}
+
 /*
 footer{
 	position:absolute;
@@ -153,3 +166,6 @@ div.keepOpen{
 	}
 }
 */
+
+
+}
