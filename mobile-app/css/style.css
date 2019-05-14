@@ -167,5 +167,61 @@ div.keepOpen{
 }
 */
 
+div#text2
+{
+    text-align: center;
+    font-size: 72px;
+    margin: 70px;
+    text-decoration: none;
+    padding: 20px;
+    margin-top: 0px;
+    color: #333;
+}
+div#text3
+{
+    text-align: center;
+    font-size: 72px;
+    margin: 0px;
+    text-decoration: underline;
+    padding: 20px;
+    color: #333;
+}
 
+@media screen and (max-width: 1200px)
+{
+    figure.product
+    {
+        float: none;
+        margin: 10px auto;
+        min-width: 50%;
+        max-width: 100%;
+        background-color: white;
+        border-radius: 5%;
+    }
+    figure.product figcaption
+    {
+        text-align: center;
+        color: white;
+        font-family: Dosis;
+        font-size: 12px;
+    }
+    legend, span, input, textarea
+    {
+        display: block;
+        margin: auto;
+        text-align: center;
+        font-family: Dosis;
+        color: #333;
+    }
+}
+
+h5
+{
+    font-size: 0.00001px;
+    margin-top: 0px;
+}
+
+h3
+{
+    margin-bottom: 10px;
 }
